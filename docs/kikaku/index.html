@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header class="c-header c-hamburger-menu"><!-- 追記 クラスを追記 -->
+    <header class="c-header c-hamburger-menu">
         <a href="../index.html" class="c-header__logo">第2回都立大子どもまつり2024</a>
-        <input type="checkbox" name="hamburger" id="hamburger" class="c-hamburger-menu__input"/><!-- 追記 idはlabelのforと同じにする -->
-        <label for="hamburger" class="c-hamburger-menu__bg"></label><!-- 追記 ハンバーガーメニュを開いた時の背景 -->
-        <ul class="c-header__list c-hamburger-menu__list"><!-- 追記 クラスを追記 -->
+        <input type="checkbox" name="hamburger" id="hamburger" class="c-hamburger-menu__input"/>
+        <label for="hamburger" class="c-hamburger-menu__bg"></label>
+        <ul class="c-header__list c-hamburger-menu__list">
           <li class="c-header__list-item">
             <a href="../kikaku/index.html" class="c-header__list-link">展示企画</a>
           </li>
@@ -35,17 +35,20 @@
             <a href="../contact/index.html" class="c-header__list-link">お問い合わせ</a>
           </li>
         </ul>
-        <label for="hamburger" class="c-hamburger-menu__button"><!-- 追記 ハンバーガーメニューのボタン -->
+        <label for="hamburger" class="c-hamburger-menu__button">
           <span class="c-hamburger-menu__button-mark"></span>
           <span class="c-hamburger-menu__button-mark"></span>
           <span class="c-hamburger-menu__button-mark"></span>
         </label>
-      </header>
+    </header>
     
     <main>
         <div class="title">展示企画</div>
-        
-
+        <div class="container">
+          <div class="box" onclick="showInfo('plan')">企画ごとにさがす</div>
+          <div class="box" onclick="showInfo('interest')">やりたいことから<br>さがす</div>
+        </div>
+        <div id="infoSection"></div><!-- 追加: 情報セクションを追加 -->
     </main>
 
     <footer>
@@ -56,5 +59,30 @@
         <p>代表者：井上</p>
         <p>created by  都立大子どもまつり実行委員会</p>
     </footer>
+    <script>
+        function showInfo(type) {
+            const infoSection = document.getElementById("infoSection");
+            infoSection.innerHTML = "";
+
+            let infoContent = "";
+            if (type === "plan") {
+                infoContent = `
+                    <div class="info-box">
+                        <h2>展示企画情報</h2>
+                        <p>ここに展示企画の情報が表示されます。</p>
+                    </div>`;
+            } else if (type === "interest") {
+                infoContent = `
+                    <div class="info-box">
+                        <h2>やりたいこと情報</h2>
+                        <p>ここにやりたいことからさがす情報が表示されます。</p>
+                    </div>`;
+            }
+
+            infoSection.innerHTML = infoContent;
+            infoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
+
