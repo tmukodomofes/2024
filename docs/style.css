@@ -162,19 +162,6 @@ footer{
     display: none;
   }
   
-  .c-hamburger-menu__bg {
-    background-color: #000; /* カスタマイズしてください */
-    cursor: pointer;
-    display: none;
-    height: 100vh;
-    left: 0;
-    opacity: 0.4; /* カスタマイズしてください */
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
-  }
-  
   #hamburger:checked ~ .c-hamburger-menu__bg {
     display: block;
   }
