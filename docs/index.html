@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">×</span>
+    <div class="modal-title">ご来場に関してのお願い</div>
+    <p>会場内には駐輪・駐車スペースはございません。<br>公共交通機関をご利用いただくか、大学周辺の駐輪場・駐車場をご利用ください。</p>
+  </div>
+</div>
 <body>
     <header class="c-header c-hamburger-menu"><!-- 追記 クラスを追記 -->
         <a href="index.html" class="c-header__logo">第2回都立大子どもまつり2024</a>
@@ -66,4 +73,26 @@
     </footer>
 </body>
 </html>
+
+<script>
+  var modal = document.getElementById("myModal");
+  var closeButton = document.querySelector(".close-button");
+  
+  window.onload = function() {
+    setTimeout(function() {
+      modal.style.display = "block";
+    }, 0);
+  }
+  
+  closeButton.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
+  
 
